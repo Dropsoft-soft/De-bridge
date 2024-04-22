@@ -1,0 +1,9 @@
+aiohttp==3.9.3
+aiohttp-proxy==0.1.2
+art==6.1
+loguru==0.7.2
+setuptools
+web3
+art==6.1
+questionary
+tqdm==4.66.2
