@@ -1,3 +1,4 @@
+import asyncio
 from core import *
 import random
 from loguru import logger
@@ -67,13 +68,16 @@ async def circularBridge(_id, key):
     amount_from             = 0.0001    # Amount from to bridge tokens
     amount_to               = 0.0001    # Amount to to bridge tokens
     bridge_all_balance      = False     # True / False. IF True, swap all balance
-    len_array = len(chains)-1
-    for chain, index in enumerate(chains):    
+    len_array = len(chains)
+    for index, chain in enumerate(chains):    
         debridge = DeBridge(_id, key, chain)
-        if len_array == index:
+        if len_array == index+1:
             logger.info(f'Finished')
             return
-        to_chain = chains[index]
-        await debridge.bridge(
+        to_chain = chains[index+1]
+        result = await debridge.bridge(
             chain, to_chain, amount_from, amount_to, bridge_all_balance
         )
+        await asyncio.sleep(1)
+        print(result)
+
