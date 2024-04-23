@@ -28,7 +28,8 @@ def get_module():
             Choice("1) Use DeBridge", startdebridge),
             Choice("2) Use Nitro", startnitrobridge),
             Choice("3) Do random bridge", randomBridge),
-            Choice("4) Exit", "exit"),
+            Choice("4) Do circular bridge", circularBridge),
+            Choice("5) Exit", "exit"),
         ],
           qmark="⚙️ ",
         pointer="✅ "

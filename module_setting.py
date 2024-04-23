@@ -57,3 +57,23 @@ async def randomBridge(_id, key):
     await debridge.bridge(
         from_chain, to_chain,amount_from, amount_to, bridge_all_balance
     )
+
+
+async def circularBridge(_id, key):
+    # bridge from 1 chain to second untill list is ended
+    chains  = ['ethereum', 'optimism',  'bsc', 'arbitrum', 'base', 'avalanche', 'polygon', 'linea']
+   
+    # User settings
+    amount_from             = 0.0001    # Amount from to bridge tokens
+    amount_to               = 0.0001    # Amount to to bridge tokens
+    bridge_all_balance      = False     # True / False. IF True, swap all balance
+    len_array = len(chains)-1
+    for chain, index in enumerate(chains):    
+        debridge = DeBridge(_id, key, chain)
+        if len_array == index:
+            logger.info(f'Finished')
+            return
+        to_chain = chains[index]
+        await debridge.bridge(
+            chain, to_chain, amount_from, amount_to, bridge_all_balance
+        )
