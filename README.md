@@ -8,7 +8,7 @@ Supported Chains : ethereum | bsc | optimism | arbitrum | base | avalanche | pol
 
 🔔 CHANNEL: https://t.me/drop_software
 
-💰 DONATION EVM ADDRESS: 0xb1b1ac053248a2C88e32140e4691d2A8Be6Ab9c9
+💰 DONATION EVM ADDRESS: 0x8cC0B0c49286b804Db02bd3a9412ec2bafF19d53
 
 ## User_data
 
